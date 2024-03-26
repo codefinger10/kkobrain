@@ -1,20 +1,24 @@
-import { Metadata } from "next";
-
+import type { Metadata } from "next";
+import "@/styles/globals.css";
 export const metadata: Metadata = {
-  title: "카카오 브레인 블로그 - 클론코드",
-  description: "클론 코드를 통한 프로젝트",
-  themeColor: "#000000",
-  viewport: { width: "device-width", initialScale: 1 },
+  title: "전국 보건소 위치 안내",
+  description: "전국 보건소 위치 안내 서비스 앱",
 };
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="ko">
-      <head></head>
-      <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root">{children}</div>
-      </body>
+      <head>
+        <meta
+          name="naver-site-verification"
+          content="8d0adb20f574d2b9ce583dffb9646df469aecb0f"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
